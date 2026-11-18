@@ -1,0 +1,390 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f3f6fb;
+  color: #263445;
+}
+
+.header {
+  background: #087e8b;
+  color: white;
+  padding: 22px 30px;
+}
+
+.header h1 {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+.layout {
+  display: flex;
+  min-height: calc(100vh - 90px);
+}
+
+.sidebar {
+  width: 240px;
+  background: #ffffff;
+  padding: 25px 15px;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.05);
+}
+
+.sidebar h3 {
+  margin: 10px;
+  color: #80909e;
+  font-size: 13px;
+}
+
+.sidebar button {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  margin: 5px 0;
+  border: none;
+  background: transparent;
+  text-align: left;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 15px;
+  color: #34495e;
+}
+
+.sidebar button:hover,
+.sidebar button.active {
+  background: #087e8b;
+  color: white;
+}
+
+.content {
+  flex: 1;
+  padding: 35px;
+}
+
+.content h2 {
+  margin-bottom: 15px;
+  color: #087e8b;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.dashboard-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.dashboard-card h3 {
+  color: #687786;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.dashboard-card h1 {
+  color: #087e8b;
+  font-size: 34px;
+}
+
+@media (max-width: 650px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .content {
+    padding: 20px;
+  }
+}
+
+.doctor-search {
+  display: flex;
+  gap: 15px;
+  margin: 25px 0;
+  flex-wrap: wrap;
+}
+
+.doctor-search input,
+.doctor-search select {
+  padding: 13px;
+  border: 1px solid #ccd5df;
+  border-radius: 7px;
+  font-size: 15px;
+  min-width: 220px;
+}
+
+.doctor-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.doctor-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.doctor-card h3 {
+  color: #087e8b;
+  margin-bottom: 12px;
+}
+
+.doctor-card p {
+  margin: 10px 0;
+  color: #596979;
+}
+
+.doctor-card button {
+  background: #087e8b;
+  color: white;
+  padding: 11px 15px;
+  border: none;
+  border-radius: 6px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.doctor-card button:hover {
+  background: #05616b;
+}
+
+.appointment-form {
+  background: white;
+  max-width: 600px;
+  padding: 30px;
+  margin-top: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+
+.appointment-form h3 {
+  color: #087e8b;
+  margin-bottom: 25px;
+  font-size: 22px;
+}
+
+.appointment-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.appointment-form label {
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.appointment-form input,
+.appointment-form select {
+  padding: 13px;
+  border: 1px solid #ccd5df;
+  border-radius: 7px;
+  font-size: 15px;
+  width: 100%;
+}
+
+.appointment-form button {
+  background: #087e8b;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 7px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.appointment-form button:hover {
+  background: #05616b;
+}
+
+.appointment-form form p {
+  color: #087e8b;
+  font-weight: bold;
+}
+
+.reports-page {
+  margin-top: 24px;
+}
+
+.reports-heading,
+.report-bar-label,
+.report-doctor-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.reports-heading h3,
+.report-panel h3 {
+  color: #087e8b;
+  margin-bottom: 8px;
+}
+
+.reports-heading p,
+.report-privacy {
+  color: #687786;
+}
+
+.report-export,
+.report-reset {
+  border: 0;
+  border-radius: 7px;
+  padding: 12px 16px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.report-export {
+  background: #087e8b;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.report-export:hover {
+  background: #05616b;
+}
+
+.report-filters {
+  display: flex;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 24px 0;
+  padding: 18px;
+  background: #fff;
+  border: 1px solid #e4ebf0;
+  border-radius: 12px;
+}
+
+.report-filters label {
+  display: grid;
+  gap: 6px;
+  color: #596979;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.report-filters input,
+.report-filters select {
+  min-width: 165px;
+  padding: 10px 12px;
+  border: 1px solid #ccd5df;
+  border-radius: 7px;
+  color: #263445;
+  background: #fff;
+  font: inherit;
+}
+
+.report-reset {
+  color: #087e8b;
+  background: #e8f5f5;
+}
+
+.report-summary {
+  margin: 0 0 22px;
+}
+
+.report-summary .dashboard-card {
+  padding: 22px;
+}
+
+.report-summary .dashboard-card h3 {
+  margin-bottom: 12px;
+}
+
+.report-panels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.report-panel {
+  padding: 24px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.report-bar-row {
+  margin-top: 18px;
+}
+
+.report-bar-label,
+.report-doctor-row {
+  color: #596979;
+  font-size: 14px;
+}
+
+.report-bar-label strong,
+.report-doctor-row strong {
+  color: #263445;
+}
+
+.report-bar-track {
+  height: 8px;
+  margin-top: 8px;
+  overflow: hidden;
+  background: #eaf0f3;
+  border-radius: 10px;
+}
+
+.report-bar-track span {
+  display: block;
+  height: 100%;
+  min-width: 0;
+  background: linear-gradient(90deg, #087e8b, #39b6aa);
+  border-radius: inherit;
+  transition: width 180ms ease;
+}
+
+.report-doctor-row {
+  padding: 13px 0;
+  border-bottom: 1px solid #edf1f4;
+}
+
+.report-doctor-row:last-child {
+  border-bottom: 0;
+}
+
+.report-empty {
+  margin-top: 18px;
+  color: #687786;
+}
+
+.report-privacy {
+  margin-top: 18px;
+  font-size: 13px;
+}
+
+@media (max-width: 650px) {
+  .reports-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .report-filters,
+  .report-filters label,
+  .report-filters input,
+  .report-filters select,
+  .report-reset {
+    width: 100%;
+  }
+}
+
